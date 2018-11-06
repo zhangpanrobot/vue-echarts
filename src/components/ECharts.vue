@@ -12,7 +12,7 @@
 <script>
 import echarts from 'echarts/lib/echarts'
 import debounce from 'lodash/debounce'
-import { addListener, removeListener } from 'resize-detector'
+import { listenTo, removeListener } from 'element-resize-detector'
 
 // enumerating ECharts events for now
 const EVENTS = [
@@ -173,7 +173,7 @@ export default {
           }
           this.lastArea = this.getArea()
         }, 100, { leading: true })
-        addListener(this.$el, this.__resizeHandler)
+        listenTo(this.$el, this.__resizeHandler)
       }
 
       Object.defineProperties(this, {

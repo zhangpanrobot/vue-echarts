@@ -17,8 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "echarts": "^4.1.0",
-    "lodash": "^4.17.10",
-    "resize-detector": "^0.1.7"
+    "element-resize-detector": "^1.1.14",
+    "lodash": "^4.17.10"
   },
   "peerDependencies": {
     "vue": "^2.2.6"
@@ -26,7 +26,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.2",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^7.1.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.7.0",
@@ -37,7 +37,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "echarts-liquidfill": "^2.0.2",
-    "eslint": "^3.19.0",
+    "eslint": "^5.8.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.7.1",
@@ -62,11 +62,11 @@
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-plugin-vue": "^2.5.2",
+    "rollup-plugin-vue": "^4.3.2",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "stylus-loader": "^3.0.1",
-    "url-loader": "^0.5.8",
+    "url-loader": "^1.1.2",
     "vue": "^2.5.3",
     "vue-loader": "^13.4.0",
     "vue-style-loader": "^2.0.5",
