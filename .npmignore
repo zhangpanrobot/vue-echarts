@@ -5,6 +5,5 @@ build
 config
 demo
 node_modules
-src
 static
 index.html
