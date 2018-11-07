@@ -155,15 +155,15 @@ export default {
       chart.setOption(this.manualOptions || this.options || {}, true)
 
       // expose ECharts events as custom events
-      EVENTS.forEach(function (event) {
-        chart.on(function (event, params) {
+      EVENTS.forEach((event) => {
+        chart.on((event, params) => {
           this.$emit(event, params)
         })
       })
 
       if (this.autoResize) {
         this.lastArea = this.getArea()
-        this.__resizeHandler = debounce(function () {
+        this.__resizeHandler = debounce(() => {
           if (this.lastArea === 0) {
             // emulate initial render for initially hidden charts
             this.mergeOptions({}, true)
@@ -183,25 +183,25 @@ export default {
         // don't depend on reactive values
         width: {
           configurable: true,
-          get: function () {
+          get: () => {
             return this.delegateGet('width', 'getWidth')
           }
         },
         height: {
           configurable: true,
-          get: function () {
+          get: () => {
             return this.delegateGet('height', 'getHeight')
           }
         },
         isDisposed: {
           configurable: true,
-          get: function () {
+          get: () => {
             return !!this.delegateGet('isDisposed', 'isDisposed')
           }
         },
         computedOptions: {
           configurable: true,
-          get: function () {
+          get: () => {
             return this.delegateGet('computedOptions', 'getOption')
           }
         }
@@ -225,7 +225,7 @@ export default {
   },
   created () {
     if (!this.manualUpdate) {
-      this.$watch('options', function (val, oldVal) {
+      this.$watch('options', (val, oldVal) => {
         if (!this.chart && val) {
           this.init()
         } else {
@@ -242,8 +242,8 @@ export default {
     }
 
     let watched = ['theme', 'initOptions', 'autoResize', 'manualUpdate', 'watchShallow']
-    watched.forEach(function (prop) {
-      this.$watch(prop, function () {
+    watched.forEach((prop) => {
+      this.$watch(prop, () => {
         this.refresh()
       }, { deep: true })
     })
@@ -267,7 +267,7 @@ export default {
   },
   connect (group) {
     if (typeof group !== 'string') {
-      group = group.map(function (chart) {return chart.chart})
+      group = group.map(chart => chart.chart)
     }
     echarts.connect(group)
   },
